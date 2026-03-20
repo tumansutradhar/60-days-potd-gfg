@@ -1,15 +1,15 @@
 class Solution
 {
-public
-    static int overlapInt(int[][] arr)
+public:
+    int overlapInt(vector<vector<int>> &arr)
     {
         int max_val = 0;
-        for (int[] interval : arr)
-            max_val = Math.max(max_val, interval[1]);
+        for (auto &interval : arr)
+            max_val = max(max_val, interval[1]);
 
-        int[] diff = new int[max_val + 2];
+        vector<int> diff(max_val + 2, 0);
 
-        for (int[] interval : arr)
+        for (auto &interval : arr)
         {
             diff[interval[0]] += 1;
             diff[interval[1] + 1] -= 1;
@@ -20,9 +20,9 @@ public
         for (int i = 0; i <= max_val; i++)
         {
             current += diff[i];
-            maxOverlap = Math.max(maxOverlap, current);
+            maxOverlap = max(maxOverlap, current);
         }
 
         return maxOverlap;
     }
-}
+};

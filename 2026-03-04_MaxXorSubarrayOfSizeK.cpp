@@ -3,7 +3,6 @@ class Solution
 public:
     int maxSubarrayXOR(vector<int> &arr, int k)
     {
-        // code here
         int n = arr.size();
         int currXor = 0;
 
